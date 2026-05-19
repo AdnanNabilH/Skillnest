@@ -6,9 +6,14 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
 }
+
+/* =========================================================
+   ROOT COLORS
+========================================================= */
 
 :root {
     --color-primary: #2563eb;
@@ -19,52 +24,1485 @@
     --color-footer: #0f172a;
 }
 
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-/* SECTION */
-.section-container {
-    @apply mx-auto max-w-6xl px-6;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    @apply bg-[#F8FAFC] text-[#1b1b18];
+    font-family: var(--font-sans);
+}
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.section-container {
+    @apply mx-auto w-full max-w-6xl px-6;
+}
+
+.page-container {
+    @apply mx-auto w-full max-w-7xl px-6 md:px-8;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
 .section-heading {
-    @apply text-5xl font-bold tracking-[-0.03em] text-[var(--color-primary-dark)];
+    @apply text-5xl font-bold tracking-[-0.03em]
+    text-[var(--color-primary-dark)];
 }
 
 .section-subheading {
     @apply mt-5 text-lg leading-8 text-[var(--color-muted)];
 }
 
+/* =========================================================
+   CARD
+========================================================= */
 
-/* CARD */
 .card-primary {
     @apply rounded-[2.5rem] bg-white shadow-sm;
 }
 
+/* =========================================================
+   INPUT
+========================================================= */
 
-/* INPUT */
 .input-field {
-    @apply h-[58px] w-full rounded-2xl border border-[#D8E2F3] bg-[#F8FAFD] px-5 text-base outline-none transition;
+    @apply h-[58px] w-full rounded-2xl border
+    border-[#D8E2F3] bg-[#F8FAFD] px-5 text-base
+    outline-none transition;
 }
 
 .input-field:focus {
     border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
+/* =========================================================
+   TEXTAREA
+========================================================= */
 
-/* TEXTAREA */
 .textarea-field {
-    @apply w-full rounded-2xl border border-[#D8E2F3] bg-[#F8FAFD] px-5 py-4 text-base outline-none transition;
+    @apply w-full rounded-2xl border
+    border-[#D8E2F3] bg-[#F8FAFD]
+    px-5 py-4 text-base outline-none transition;
 }
 
 .textarea-field:focus {
     border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
+/* =========================================================
+   BUTTON
+========================================================= */
 
-/* BUTTON */
 .btn-primary {
-    @apply inline-flex items-center justify-center rounded-2xl bg-[var(--color-primary)] px-8 py-4 text-base font-semibold text-white shadow-sm transition;
+    @apply inline-flex items-center justify-center
+    rounded-2xl bg-[var(--color-primary)]
+    px-8 py-4 text-base font-semibold
+    text-white shadow-sm transition;
 }
 
 .btn-primary:hover {
     opacity: 0.9;
+}
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contact-page {
+    background: #F6FAFF;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* HERO */
+
+.contact-hero {
+    text-align: center;
+    padding-top: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #EFF6FF;
+    border-radius: 999px;
+    padding: 6px 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #0f172a;
+}
+
+.contact-heading {
+    margin-top: 24px;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+}
+
+.contact-subtext {
+    margin-top: 16px;
+    font-size: 17px;
+    color: #64748b;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* WRAPPER */
+
+.contact-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 24px;
+}
+
+/* CARD */
+
+.contact-card {
+    background: white;
+    border-radius: 36px;
+    border: 1px solid #EDF2FA;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.07);
+    padding: 32px;
+    margin-top: 48px;
+    position: relative;
+    z-index: 1;
+}
+
+/* GRID */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+}
+
+@media (min-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 0.85fr 1.3fr;
+        align-items: start;
+    }
+}
+
+/* LEFT PANEL */
+
+.contact-left {
+    background: linear-gradient(135deg, #2B6FFF 0%, #1550D8 100%);
+    border-radius: 28px;
+    padding: 40px 36px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-left-circle-1 {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+}
+
+.contact-left-circle-2 {
+    position: absolute;
+    bottom: -40px;
+    right: -30px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(255,213,79,0.13);
+}
+
+.contact-left-content {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-left-title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.contact-left-sub {
+    margin-top: 16px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.75;
+}
+
+/* FORM */
+
+.contact-form-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+}
+
+.contact-form-sub {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.7;
+}
+
+.contact-form {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 640px) {
+    .contact-form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* DECORATIONS */
+
+.contact-deco-circle-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: #DCE7FB;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.contact-deco-circle-2 {
+    position: absolute;
+    top: 112px;
+    right: 32px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #F3E7BE;
+}
+
+.contact-deco-circle-3 {
+    position: absolute;
+    bottom: 64px;
+    left: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #E6EEFF;
+}
+
+.contact-deco-square-1 {
+    position: absolute;
+    left: 0;
+    top: 160px;
+    width: 80px;
+    height: 80px;
+    border-radius: 24px;
+    border: 5px solid #D6E1F7;
+}
+
+.contact-deco-square-2 {
+    position: absolute;
+    left: 40px;
+    top: 220px;
+    width: 56px;
+    height: 56px;
+    border-radius: 20px;
+    border: 5px solid #F2D98D;
+}
+
+/* CONTACT ITEMS */
+
+.contact-items {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.contact-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    background: #FFC928;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.contact-item-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.contact-item-value {
+    margin-top: 5px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+}
+
+/* RESPONSE BADGE */
+
+.contact-response-badge {
+    display: inline-block;
+    margin-top: 40px;
+    background: #FFC928;
+    color: #111827;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 11px 24px;
+    border-radius: 999px;
+}
+
+/* LABEL */
+
+.contact-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* SELECT */
+
+.contact-select {
+    width: 100%;
+    height: 58px;
+    border: 1.5px solid #D9E5F7;
+    background: #F9FBFF;
+    border-radius: 16px;
+    padding: 0 18px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.contact-select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(43,111,255,0.1);
+}
+
+/* ERROR */
+
+.input-error {
+    border-color: #f87171 !important;
+}
+
+.field-error {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #ef4444;
+}
+
+/* SUCCESS */
+
+.success-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 14px;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: #15803d;
+    font-weight: 500;
+}
+
+
+
+/* ============================================================
+   FAQ PAGE  –  tambahkan ke resources/css/app.css
+   (atau file CSS terpisah yang di-import di app.css)
+   ============================================================ */
+
+/* ---------- PAGE BODY ---------- */
+.faq-page {
+    background-color: #f0f4f8;
+    font-family: 'Instrument Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- SECTION WRAPPER ---------- */
+.faq-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 1.5rem 6rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ---------- DECORATIONS ---------- */
+/* Yellow square top-left  (like contact page) */
+.faq-deco-square-1 {
+    position: absolute;
+    top: 3rem;
+    left: -1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 3px solid #f5c842;
+    border-radius: 0.4rem;
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+/* Gray square bottom-right */
+.faq-deco-square-2 {
+    position: absolute;
+    bottom: 12rem;
+    right: -1rem;
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid #cbd5e1;
+    border-radius: 0.4rem;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Faint circle top-right */
+.faq-deco-circle-1 {
+    position: absolute;
+    top: -4rem;
+    right: -6rem;
+    width: 18rem;
+    height: 18rem;
+    background: radial-gradient(circle, #dbeafe 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Faint circle bottom-left */
+.faq-deco-circle-2 {
+    position: absolute;
+    bottom: -5rem;
+    left: -8rem;
+    width: 22rem;
+    height: 22rem;
+    background: radial-gradient(circle, #fef9e7 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* ---------- HERO ---------- */
+.faq-hero {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.faq-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #f5c842;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.faq-heading {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+.faq-subtext {
+    font-size: 0.95rem;
+    color: #64748b;
+    max-width: 46ch;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ---------- ACCORDION CARD ---------- */
+.faq-card {
+    background: #ffffff;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.75rem;
+}
+
+/* ---------- ACCORDION ITEM ---------- */
+.faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    transition: background 0.25s ease;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item--active {
+    background-color: #1e3a8a;
+}
+
+/* ---------- QUESTION BUTTON ---------- */
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.15rem 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-question:focus-visible {
+    outline: 2px solid #f5c842;
+    outline-offset: -2px;
+}
+
+/* ---------- ICON ---------- */
+.faq-icon {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #f5c842;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.35s ease;
+}
+
+.faq-icon--active {
+    background-color: #f5c842;
+    color: #1e293b;
+    transform: rotate(45deg);          /* + becomes × */
+}
+
+/* Hide the vertical bar of + when active (turns into –) */
+/* We rotate the whole icon so both lines stay, forming × */
+
+/* ---------- QUESTION TEXT ---------- */
+.faq-question-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.4;
+    transition: color 0.25s ease;
+}
+
+.faq-item--active .faq-question-text {
+    color: #ffffff;
+}
+
+/* ---------- ANSWER ---------- */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 1.5rem 0 4rem;       /* indent to align with text */
+}
+
+.faq-answer--open {
+    max-height: 20rem;
+    padding-bottom: 1.25rem;
+}
+
+.faq-answer-text {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+/* ---------- CTA BANNER ---------- */
+.faq-cta {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    border-radius: 1rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.faq-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.07) 0%, transparent 55%);
+}
+
+.faq-cta-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.75rem 2rem;
+    flex-wrap: wrap;
+}
+
+.faq-cta-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+}
+
+.faq-cta-sub {
+    font-size: 0.85rem;
+    color: #93c5fd;
+}
+
+.faq-cta-btn {
+    display: inline-block;
+    background-color: #f5c842;
+    color: #1e293b;
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0.65rem 1.75rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.faq-cta-btn:hover {
+    background-color: #eab308;
+    transform: translateY(-1px);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 640px) {
+    .faq-wrapper {
+        padding: 3rem 1rem 4rem;
+    }
+
+    .faq-cta-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+    }
+
+    .faq-cta-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .faq-answer {
+        padding-left: 1.5rem;
+    }
+}
+
+/* ============================================================
+   REGISTER / DAFTAR PAGE  –  tambahkan ke resources/css/app.css
+   ============================================================ */
+
+/* ---------- PAGE BODY ---------- */
+.register-page {
+    background-color: #f0f4f8;
+    font-family: 'Instrument Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- OUTER WRAPPER (two-column split) ---------- */
+.register-wrapper {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1100px;
+    margin: 3rem auto 4rem;
+    width: 100%;
+    padding: 0 1.5rem;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* ============================================================
+   LEFT PANEL
+   ============================================================ */
+.register-left {
+    position: relative;
+    padding: 1rem 0;
+}
+
+/* Decorations */
+.reg-deco-circle-blue {
+    position: absolute;
+    top: -3rem;
+    right: -2rem;
+    width: 14rem;
+    height: 14rem;
+    background: radial-gradient(circle, #dbeafe 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.reg-deco-circle-yellow {
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+    width: 10rem;
+    height: 10rem;
+    background: radial-gradient(circle, #fef9c3 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.reg-deco-square-gray {
+    position: absolute;
+    bottom: 3.5rem;
+    left: -1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid #cbd5e1;
+    border-radius: 0.4rem;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.reg-deco-square-yellow {
+    position: absolute;
+    bottom: 1rem;
+    left: 0.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 3px solid #f5c842;
+    border-radius: 0.5rem;
+    opacity: 0.65;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.register-left-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Badge */
+.reg-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #f5c842;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+/* Heading */
+.reg-heading {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+}
+
+.reg-subtext {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+    max-width: 38ch;
+}
+
+/* ---------- ROLE CARDS (left panel) ---------- */
+.reg-role-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.reg-role-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.reg-role-card:hover {
+    border-color: #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.reg-role-card--active {
+    border-color: #1e3a8a !important;
+    box-shadow: 0 4px 16px rgba(30,58,138,0.12) !important;
+}
+
+.reg-role-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.reg-role-avatar--blue {
+    background-color: #dbeafe;
+    color: #1e3a8a;
+}
+
+.reg-role-avatar--yellow {
+    background-color: #fef9c3;
+    color: #854d0e;
+}
+
+.reg-role-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.2rem;
+}
+
+.reg-role-desc {
+    font-size: 0.8rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* ============================================================
+   RIGHT PANEL (FORM CARD)
+   ============================================================ */
+.register-right {
+    display: flex;
+    align-items: flex-start;
+}
+
+.register-form-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+    padding: 2.25rem 2rem;
+    width: 100%;
+}
+
+.reg-form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.3rem;
+}
+
+.reg-form-sub {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 1.75rem;
+}
+
+/* ---------- FORM FIELDS ---------- */
+.reg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.reg-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.reg-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* Re-use .input-field from your app.css; ensure it exists: */
+.input-field {
+    width: 100%;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.6rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    font-family: 'Instrument Sans', sans-serif;
+    color: #1e293b;
+    background: #f8fafc;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+    border-color: #1e3a8a;
+    box-shadow: 0 0 0 3px rgba(30,58,138,0.08);
+    background: #ffffff;
+}
+
+.input-field::placeholder {
+    color: #94a3b8;
+}
+
+.input-error {
+    border-color: #ef4444 !important;
+}
+
+.field-error {
+    font-size: 0.78rem;
+    color: #ef4444;
+}
+
+/* ---------- ROLE TOGGLE BUTTONS ---------- */
+.reg-role-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.reg-toggle-btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: 'Instrument Sans', sans-serif;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.reg-toggle-btn--active {
+    background: #1e3a8a;
+    color: #ffffff;
+}
+
+/* ---------- PASSWORD WITH EYE ---------- */
+.reg-password-wrap {
+    position: relative;
+}
+
+.reg-password-wrap .input-field {
+    padding-right: 2.75rem;
+}
+
+.reg-eye-btn {
+    position: absolute;
+    right: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.reg-eye-btn:hover {
+    color: #1e3a8a;
+}
+
+/* ---------- SUBMIT BUTTON ---------- */
+.reg-submit-btn {
+    margin-top: 0.25rem;
+    padding: 0.85rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 0.6rem;
+    background: #1e3a8a;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.reg-submit-btn:hover {
+    background: #1e40af;
+    transform: translateY(-1px);
+}
+
+/* Re-use from app.css */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.success-box {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    color: #166534;
+    border-radius: 0.5rem;
+    padding: 0.65rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ---------- LOGIN LINK ---------- */
+.reg-login-link {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-top: 1.25rem;
+}
+
+.reg-login-anchor {
+    font-weight: 700;
+    color: #1e3a8a;
+    text-decoration: none;
+    margin-left: 0.25rem;
+}
+
+.reg-login-anchor:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .register-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 2rem auto;
+    }
+
+    .register-left {
+        order: 2;
+    }
+
+    .register-right {
+        order: 1;
+    }
+
+    .reg-deco-circle-blue,
+    .reg-deco-circle-yellow,
+    .reg-deco-square-gray,
+    .reg-deco-square-yellow {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-form-card {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+/* ============================================================
+   LOGIN / MASUK PAGE
+   ============================================================ */
+
+.login-page {
+    background-color: #f1f5f9;
+    font-family: 'Instrument Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-wrapper {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1180px;
+    margin: 2.5rem auto 4rem;
+    width: 100%;
+    padding: 0 1.5rem;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* ============================================================
+   LEFT PANEL
+   ============================================================ */
+
+.login-left {
+    position: relative;
+}
+
+.login-left-content {
+    position: relative;
+    z-index: 2;
+}
+
+.login-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.login-heading {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.15;
+    font-weight: 700;
+    color: #0f172a;
+    max-width: 12ch;
+    margin-bottom: 1rem;
+}
+
+.login-heading span {
+    color: #1d4ed8;
+}
+
+.login-subtext {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #64748b;
+    max-width: 42ch;
+    margin-bottom: 3rem;
+}
+
+/* Decorations */
+
+.login-deco-circle-blue {
+    position: absolute;
+    top: -5rem;
+    right: -4rem;
+    width: 18rem;
+    height: 18rem;
+    background: radial-gradient(circle, #dbeafe 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.login-deco-circle-yellow {
+    position: absolute;
+    right: 0;
+    top: 12rem;
+    width: 10rem;
+    height: 10rem;
+    background: radial-gradient(circle, #fef3c7 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.login-deco-square-gray {
+    position: absolute;
+    left: -2rem;
+    bottom: 2rem;
+    width: 4rem;
+    height: 4rem;
+    border: 3px solid #cbd5e1;
+    border-radius: 0.8rem;
+    opacity: 0.6;
+}
+
+.login-deco-square-yellow {
+    position: absolute;
+    left: 1rem;
+    bottom: -1rem;
+    width: 5rem;
+    height: 5rem;
+    border: 3px solid #facc15;
+    border-radius: 1rem;
+    opacity: 0.7;
+}
+
+/* Dashboard Mockup */
+
+.login-dashboard-card {
+    width: 360px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(6px);
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+.login-dashboard-header {
+    background: #1e40af;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.login-dashboard-stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.login-stat-card {
+    flex: 1;
+    background: #f8fafc;
+    border: 1.5px solid #dbeafe;
+    border-radius: 1rem;
+    padding: 1rem 1.2rem;
+}
+
+.login-stat-card h3 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 0.2rem;
+}
+
+.login-stat-card p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.login-stat-card--yellow {
+    background: #fefce8;
+    border-color: #fde68a;
+}
+
+/* ============================================================
+   RIGHT PANEL
+   ============================================================ */
+
+.login-right {
+    display: flex;
+    justify-content: center;
+}
+
+.login-form-card {
+    width: 100%;
+    max-width: 470px;
+    background: white;
+    border-radius: 2rem;
+    padding: 3rem;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    position: relative;
+    z-index: 5;
+}
+
+.login-form-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.login-form-sub {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.login-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* Password */
+
+.login-password-wrap {
+    position: relative;
+}
+
+.login-password-wrap .input-field {
+    padding-right: 3rem;
+}
+
+.login-eye-btn {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+/* Remember */
+
+.login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -0.2rem;
+}
+
+.remember-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: #475569;
+    cursor: pointer;
+}
+
+.remember-wrap input {
+    width: 1rem;
+    height: 1rem;
+}
+
+.forgot-link {
+    font-size: 0.9rem;
+    color: #1d4ed8;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+
+.login-submit-btn {
+    width: 100%;
+    border: none;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.login-submit-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.96;
+}
+
+.google-btn {
+    width: 100%;
+    border: 1.5px solid #dbe2ea;
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.google-btn:hover {
+    background: #f8fafc;
+}
+
+/* Register link */
+
+.login-register-link {
+    margin-top: 1.8rem;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.login-register-anchor {
+    color: #1d4ed8;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 0.25rem;
+}
+
+.login-register-anchor:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .login-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .login-left {
+        display: none;
+    }
+
+    .login-form-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .login-form-card {
+        padding: 2rem 1.5rem;
+        border-radius: 1.5rem;
+    }
+
+    .login-form-title {
+        font-size: 1.8rem;
+    }
 }
